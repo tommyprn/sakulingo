@@ -1,11 +1,14 @@
 {
   "expo": {
-    "name": "SakuLingo",
-    "slug": "SakuLingo",
+    "icon": "./assets/icon.png",
+    "owner": "longinuss",
+    "name": "satulingo",
+    "slug": "satulingo",
+    "scheme": "com.satulingo.app",
     "version": "1.0.0",
-    "scheme": "sakulingo",
+    "platforms": ["ios", "android"],
+    "sdkVersion": "51.0.0",
     "orientation": "portrait",
-    "platforms": ["ios", "android", "web"],
     "updates": {
       "enabled": true
     },
@@ -16,6 +19,18 @@
     "plugins": [
       "expo-web-browser",
       "expo-secure-store"
-    ]
+    ],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.satulingo.app"
+    },
+    "android": {
+      "package": "com.satulingo.app"
+    }
   }
 }

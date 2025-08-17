@@ -1,4 +1,4 @@
-package com.sakulingo
+package com.satulingo
 
 import android.app.Application
 import android.content.res.Configuration

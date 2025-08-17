@@ -1,4 +1,4 @@
-package com.sakulingo
+package com.satulingo
 
 import android.os.Build
 import android.os.Bundle
