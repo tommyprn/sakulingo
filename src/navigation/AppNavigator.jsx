@@ -1,6 +1,5 @@
-import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/HomeScreen";
+import Dashboard from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import LanguageScreen from "../screens/LanguageScreen";
 // import LessonScreen from "../screens/LessonScreen";
@@ -13,13 +12,18 @@ export default function AppNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="login"
-        component={LoginScreen}
+        name="dashboard"
+        component={Dashboard}
       />
 
       <Tab.Screen
         name="language"
         component={LanguageScreen}
+      />
+
+      <Tab.Screen
+        name="login"
+        component={LoginScreen}
       />
     </Tab.Navigator>
   );

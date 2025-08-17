@@ -14,7 +14,7 @@ export default function App() {
     "219101721221-os7elr7rlkc74kf5g3vrka33keap9cgq.apps.googleusercontent.com";
   const redirectUri = AuthSession.makeRedirectUri(
     {
-      scheme: "com.satulingo.app", // must match scheme in app.json
+      scheme: "com.satulingo.app",
     }
   );
 
