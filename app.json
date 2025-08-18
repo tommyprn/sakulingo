@@ -2,17 +2,22 @@
   "expo": {
     "icon": "./assets/icon.png",
     "owner": "longinuss",
-    "name": "satulingo",
+    "label": "satulingo",
     "slug": "satulingo",
     "scheme": "com.satulingo.app",
     "version": "1.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "sdkVersion": "51.0.0",
     "orientation": "portrait",
     "updates": {
       "enabled": true
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "web": {
       "bundler": "metro"
     },
@@ -31,6 +36,11 @@
     },
     "android": {
       "package": "com.satulingo.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "230cf64a-0c48-40f5-896c-47b88cc3900d"
+      }
     }
   }
 }

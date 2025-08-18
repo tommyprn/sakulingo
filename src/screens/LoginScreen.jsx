@@ -1,8 +1,13 @@
-import React, { useEffect } from "react";
-import { Button } from "react-native";
-import * as WebBrowser from "expo-web-browser";
-import * as Google from "expo-auth-session/providers/google";
+import { useEffect } from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { getGoogleUserInfo } from "../utils/google-auth";
+import * as Google from "expo-auth-session/providers/google";
+import * as WebBrowser from "expo-web-browser";
 import * as AuthSession from "expo-auth-session";
 
 WebBrowser.maybeCompleteAuthSession();
@@ -18,12 +23,21 @@ export default function App() {
     }
   );
 
+  const navigation = useNavigation();
+
   const [request, response, promptAsync] =
     Google.useAuthRequest({
       webClientId: WEB_ID,
       androidClientId: ANDROID_ID,
       redirectUri,
     });
+
+  const handleLogin = () => {
+    // Di sini kamu bisa jalankan login google dulu
+    // contoh: await promptAsync();
+    // lalu kalau berhasil -> navigate ke LanguageScreen
+    navigation.navigate("language");
+  };
 
   useEffect(() => {
     if (response?.type === "success") {
@@ -39,10 +53,15 @@ export default function App() {
   }, [response]);
 
   return (
-    <Button
-      title="Login with Google"
-      disabled={!request}
-      onPress={() => promptAsync()}
-    />
+    <View className="flex-1 bg-white justify-center items-center px-6">
+      <TouchableOpacity
+        onPress={handleLogin}
+        className="p-4 rounded-xl items-center bg-green-500 border-green-700 border-2"
+      >
+        <Text className="text-white text-lg font-bold">
+          Login with Google
+        </Text>
+      </TouchableOpacity>
+    </View>
   );
 }
